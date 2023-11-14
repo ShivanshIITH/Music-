@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="audio-player">
+        <audio id="audio" controls>
+            <source src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <div id="controls">
+            <button id="prev" onclick="prevSong()">Previous</button>
+            <button id="playPause" onclick="togglePlayPause()">Play/Pause</button>
+            <button id="next" onclick="nextSong()">Next</button>
+            <button id="shuffle" onclick="toggleShuffle()">Shuffle</button>
+        </div>
+        <div id="time-bar">
+            <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
